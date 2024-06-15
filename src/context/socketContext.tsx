@@ -8,7 +8,9 @@ import { v4 as UUIDv4 } from "uuid";
 import { peerReducer } from "../reducers/peerReducer";
 import { addPeerAction } from "../actions/peerAction";
 
-const WS_Server = "http://localhost:5500";
+const WS_Server = import.meta.env.VITE_BACKEND_URL;
+
+console.log(WS_Server)
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const SocketContext = createContext<any | null>(null);
